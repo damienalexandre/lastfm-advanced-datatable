@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <table xmlns="http://query.yahooapis.com/v1/schema/table.xsd" https="true">
     <meta>
+        <description>Fetch the best tags for each song played recently, and return them organized by days.</description>
         <author>Damien ALEXANDRE</author>
         <documentationURL></documentationURL>
+        <sampleQuery>
+          USE "https://github.com/damienalexandre/lastfm-advanced-datatable/raw/master/besttags_by_day_table.xml" AS table; SELECT name FROM table WHERE user="Mobman02" and api_key="b25b959554ed76058ac220b7b2e0a026";
+        </sampleQuery>
     </meta>
       <bindings>
         <select itemPath="lfm.recenttracks.track" produces="XML" >
