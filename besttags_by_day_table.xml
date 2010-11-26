@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd" https="true">
+    <meta>
+        <author>Damien ALEXANDRE</author>
+        <documentationURL></documentationURL>
+    </meta>
+      <bindings>
+        <select itemPath="lfm.recenttracks.track" produces="XML" >
+          <urls>
+            <url>http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks</url>
+          </urls>
+          <inputs>
+            <key id="user" type="xs:string" paramType="query" required="true" />
+            <key id="limit" type="xs:string" paramType="query" required="false" />
+            <key id="page" type="xs:string" paramType="query" required="false" />
+            <key id="api_key" type="xs:string" paramType="query" required="true" />
+          </inputs>
+          <execute><![CDATA[
+try {
+   // let try some poney code
+   response.object = request.get().response;
+} catch(err) {
+   response.object = {'result':'failure', 'error': err};
+}
+          ]]></execute>
+        </select>
+      </bindings>
+</table>
