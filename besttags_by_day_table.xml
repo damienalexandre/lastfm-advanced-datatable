@@ -5,13 +5,14 @@
         <author>Damien ALEXANDRE</author>
         <documentationURL></documentationURL>
         <sampleQuery>
-          USE "https://github.com/damienalexandre/lastfm-advanced-datatable/raw/master/besttags_by_day_table.xml" AS table; SELECT name FROM table WHERE user="Mobman02" and api_key="b25b959554ed76058ac220b7b2e0a026";
+          USE "https://github.com/damienalexandre/lastfm-advanced-datatable/raw/master/besttags_by_day_table.xml" AS table;
+          SELECT name FROM table WHERE user="Mobman02" and api_key="b25b959554ed76058ac220b7b2e0a026";
         </sampleQuery>
     </meta>
       <bindings>
         <select itemPath="lfm.recenttracks.track" produces="XML" >
           <urls>
-            <url>http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks</url>
+            <url></url>
           </urls>
           <inputs>
             <key id="user" type="xs:string" paramType="query" required="true" />
@@ -21,8 +22,9 @@
           </inputs>
           <execute><![CDATA[
 try {
-   // let try some poney code
-   response.object = request.get().response;
+
+   y.include("http://yqlblog.net/samples/base64.js");
+   
 } catch(err) {
    response.object = {'result':'failure', 'error': err};
 }
