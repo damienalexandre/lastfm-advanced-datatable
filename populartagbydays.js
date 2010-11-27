@@ -120,7 +120,7 @@ for (x in recenttracks.results.track)
 //    .query('track', recenttracks.results.track[x].name)
 //    .accept('application/json').get().response
 
-  days_array[dayDate].push(toptags.results);
+  days_array[dayDate][ days_array[dayDate].length ] = toptags.results;
 
   y.log('End call');
   
