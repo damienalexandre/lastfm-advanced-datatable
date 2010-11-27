@@ -83,6 +83,9 @@ var recenttracks = {"results": {
 }
 };
 
+
+var days_array = new Array;
+
 // For each song
 for (x in recenttracks.results.track)
 {
@@ -94,11 +97,12 @@ for (x in recenttracks.results.track)
   dayDate.setTime( recenttracks.results.track[x].date.uts );
   dayDate = dayDate.getDate() + '/' + (dayDate.getMonth()+1) + '/' + dayDate.getFullYear();
 
-  if (response.object[dayDate] == undefined)
+  if (days_array[dayDate] == undefined)
   {
-    response.object[dayDate] = new Array;
+    days_array[dayDate] = new Array;
   }
 
-  response.object[dayDate].push(recenttracks.results.track[x].name);
+  days_array[dayDate].push(recenttracks.results.track[x].name);
 }
-
+y.log(days_array);
+response.object = days_array;
