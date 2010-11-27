@@ -96,7 +96,7 @@ for (x in recenttracks.results.track)
   y.log(recenttracks.results.track[x].date.uts);
 
   var dayDate = new Date();
-  dayDate.setTime( recenttracks.results.track[x].date.uts );
+  dayDate.setTime( recenttracks.results.track[x].date.uts * 1000 );
   dayDate = dayDate.getDate() + '/' + (dayDate.getMonth()+1) + '/' + dayDate.getFullYear();
 
   y.log(dayDate);
@@ -108,13 +108,17 @@ for (x in recenttracks.results.track)
 
   y.log('Call gettoptags for '+recenttracks.results.track[x].artist.content+ ' - '+recenttracks.results.track[x].name);
 
+
   days_array[dayDate].push(
 
-    ws_toptags
-    .query('artist', recenttracks.results.track[x].artist.content)
-    .query('api_key', inputs['api_key'])
-    .query('track', recenttracks.results.track[x].name)
-    .accept('application/json').get().response
+    y.query('SELECT * FROM lastfm.track.gettoptags WHERE api_key="'+inputs['api_key']+'" '
+            +'and track="'+recenttracks.results.track[x].name+'" and artist="'+recenttracks.results.track[x].artist.content+'"').results
+
+//    ws_toptags
+//    .query('artist', recenttracks.results.track[x].artist.content)
+//    .query('api_key', inputs['api_key'])
+//    .query('track', recenttracks.results.track[x].name)
+//    .accept('application/json').get().response
 
   );
 
@@ -122,4 +126,4 @@ for (x in recenttracks.results.track)
   
 }
 
-response.object = {"results": days_array};
+response.object = {"results": "coucou"};
