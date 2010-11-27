@@ -86,7 +86,8 @@ var recenttracks = {"results": {
 
 var days_array = new Array;
 
-var ws_toptags = y.rest("http://ws.audioscrobbler.com/2.0/?method=track.gettoptags");
+//var ws_toptags = y.rest("http://ws.audioscrobbler.com/2.0/?method=track.gettoptags");
+y.query('USE "http://www.datatables.org/lastfm/lastfm.track.gettoptags.xml" AS toptags');
 
 // For each song
 for (x in recenttracks.results.track)
@@ -108,12 +109,8 @@ for (x in recenttracks.results.track)
 
   y.log('Call gettoptags for '+recenttracks.results.track[x].artist.content+ ' - '+recenttracks.results.track[x].name);
 
-  y.query('USE "http://www.datatables.org/lastfm/lastfm.track.gettoptags.xml" AS toptags');
-
-  days_array[dayDate].push(
-
-    y.query('SELECT * FROM toptags WHERE api_key="'+inputs['api_key']+'" '
-            +'and track="'+recenttracks.results.track[x].name+'" and artist="'+recenttracks.results.track[x].artist.content+'"').results
+  var toptags = y.query('SELECT * FROM toptags WHERE api_key="'+inputs['api_key']+'" '
+            +'and track="'+recenttracks.results.track[x].name+'" and artist="'+recenttracks.results.track[x].artist.content+'"');
 
 //    ws_toptags
 //    .query('artist', recenttracks.results.track[x].artist.content)
@@ -121,10 +118,10 @@ for (x in recenttracks.results.track)
 //    .query('track', recenttracks.results.track[x].name)
 //    .accept('application/json').get().response
 
-  );
+  days_array[dayDate].push(toptags.results);
 
   y.log('End call');
   
 }
 
-response.object = {"results": "coucou"};
+//response.object = {"results": 1};
