@@ -86,6 +86,8 @@ var recenttracks = {"results": {
 
 var days_array = new Array;
 
+var ws_toptags = y.rest("http://ws.audioscrobbler.com/2.0/?method=track.gettoptags");
+
 // For each song
 for (x in recenttracks.results.track)
 {
@@ -102,7 +104,16 @@ for (x in recenttracks.results.track)
     days_array[dayDate] = new Array;
   }
 
-  days_array[dayDate].push(recenttracks.results.track[x].name);
+  days_array[dayDate].push(
+
+    ws_toptags
+    .query('artist', recenttracks.results.track[x].name)
+    .query('api_key', inputs['api_key'])
+    .query('track', recenttracks.results.track[x].name)
+    .accept('application/json').get().response
+
+  );
+  
 }
-y.log(days_array);
-response.object = days_array;
+
+response.object = {"results": days_array};
