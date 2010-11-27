@@ -26,8 +26,8 @@ try {
    var request_instance = y.rest("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks");
 
 response.object = request_instance
-.query('name', inputs['user']).query('api_key', inputs['api_key'])
-.query('limit', inputs['limit']).header('User-Agent','Yahoo Pipes').get().response;
+.query('user', inputs['user']).query('api_key', inputs['api_key'])
+.query('limit', inputs['limit']).get().response;
    
 } catch(err) {
    response.object = {'result':'failure', 'error': err};
