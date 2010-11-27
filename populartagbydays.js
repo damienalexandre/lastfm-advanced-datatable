@@ -107,7 +107,7 @@ for (x in recenttracks.results.track)
   days_array[dayDate].push(
 
     ws_toptags
-    .query('artist', recenttracks.results.track[x].name)
+    .query('artist', recenttracks.results.track[x].artist.content)
     .query('api_key', inputs['api_key'])
     .query('track', recenttracks.results.track[x].name)
     .accept('application/json').get().response
