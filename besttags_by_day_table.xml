@@ -27,7 +27,7 @@ try {
 
 response.object = request_instance
 .query('name', inputs['user']).query('api_key', inputs['api_key'])
-.query('limit', inputs['limit']).get().response;
+.query('limit', inputs['limit']).header('User-Agent','Yahoo Pipes').get().response;
    
 } catch(err) {
    response.object = {'result':'failure', 'error': err};
