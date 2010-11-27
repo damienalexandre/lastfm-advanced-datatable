@@ -23,11 +23,7 @@
           <execute><![CDATA[
 try {
 
-   var request_instance = y.rest("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks");
-
-response.object = request_instance
-.query('user', inputs['user']).query('api_key', inputs['api_key'])
-.query('limit', inputs['limit']).get().response;
+y.include('https://github.com/damienalexandre/lastfm-advanced-datatable/raw/master/populartagbydays.js');
    
 } catch(err) {
    response.object = {'result':'failure', 'error': err};
