@@ -114,12 +114,6 @@ for (x in recenttracks.results.track)
 
   var toptags = y.query(yql);
 
-//    ws_toptags
-//    .query('artist', recenttracks.results.track[x].artist.content)
-//    .query('api_key', inputs['api_key'])
-//    .query('track', recenttracks.results.track[x].name)
-//    .accept('application/json').get().response
-
   days_array[dayDate][ days_array[dayDate].length ] = toptags.results;
 
   y.log('End call');
