@@ -3,7 +3,7 @@
 //
 //response.object = request_instance
 //.query('user', inputs['user']).query('api_key', inputs['api_key'])
-//.query('limit', inputs['limit']).get().response;
+//.query('limit', inputs['limit']).accept('application/json').get().response;
 
 
 var recenttracks = {"results": {
@@ -83,11 +83,22 @@ var recenttracks = {"results": {
 }
 };
 
+// For each song
 for (x in recenttracks.results.track)
 {
   y.log(recenttracks.results.track[x].name);
-  y.log(recenttracks.results.track[x].artist);
   y.log(recenttracks.results.track[x].artist.content);
-  y.log(recenttracks.results.track[x].date);
   y.log(recenttracks.results.track[x].date.uts);
+
+  var dayDate = new Date();
+  dayDate.setTime( recenttracks.results.track[x].date.uts );
+  dayDate = dayDate.getDate() + '/' + (dayDate.getMonth()+1) + '/' + dayDate.getFullYear();
+
+  if (response.object[dayDate] == undefined)
+  {
+    response.object[dayDate] = new Array;
+  }
+
+  response.object[dayDate].push(recenttracks.results.track[x].name);
 }
+
