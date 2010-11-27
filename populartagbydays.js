@@ -86,4 +86,8 @@ var recenttracks = {"results": {
 for (x in recenttracks.results.track)
 {
   y.log(recenttracks.results.track[x].name);
+  y.log(recenttracks.results.track[x].artist);
+  y.log(recenttracks.results.track[x].artist.content);
+  y.log(recenttracks.results.track[x].date);
+  y.log(recenttracks.results.track[x].date.uts);
 }

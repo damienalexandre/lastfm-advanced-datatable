@@ -1,2 +1,4 @@
 - Paging element
 - Protect the API key
+- Fine control over data caching to speed up the process
+- Cache for each song top tags
