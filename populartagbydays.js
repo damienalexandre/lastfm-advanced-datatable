@@ -99,10 +99,14 @@ for (x in recenttracks.results.track)
   dayDate.setTime( recenttracks.results.track[x].date.uts );
   dayDate = dayDate.getDate() + '/' + (dayDate.getMonth()+1) + '/' + dayDate.getFullYear();
 
+  y.log(dayDate);
+
   if (days_array[dayDate] == undefined)
   {
     days_array[dayDate] = new Array;
   }
+
+  y.log('Call gettoptags for '+recenttracks.results.track[x].artist.content+ ' - '+recenttracks.results.track[x].name);
 
   days_array[dayDate].push(
 
@@ -113,6 +117,8 @@ for (x in recenttracks.results.track)
     .accept('application/json').get().response
 
   );
+
+  y.log('End call');
   
 }
 
