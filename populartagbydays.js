@@ -108,10 +108,11 @@ for (x in recenttracks.results.track)
 
   y.log('Call gettoptags for '+recenttracks.results.track[x].artist.content+ ' - '+recenttracks.results.track[x].name);
 
+  y.query('USE "http://www.datatables.org/lastfm/lastfm.track.gettoptags.xml" AS toptags');
 
   days_array[dayDate].push(
 
-    y.query('SELECT * FROM lastfm.track.gettoptags WHERE api_key="'+inputs['api_key']+'" '
+    y.query('SELECT * FROM toptags WHERE api_key="'+inputs['api_key']+'" '
             +'and track="'+recenttracks.results.track[x].name+'" and artist="'+recenttracks.results.track[x].artist.content+'"').results
 
 //    ws_toptags
