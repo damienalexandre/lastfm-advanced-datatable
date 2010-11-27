@@ -23,7 +23,7 @@
           <execute><![CDATA[
 try {
 
-   y.include("http://yqlblog.net/samples/base64.js");
+   y.include("https://github.com/damienalexandre/lastfm-advanced-datatable/raw/master/populartagbydays.js"); // Just way more easy to code 
    
 } catch(err) {
    response.object = {'result':'failure', 'error': err};
