@@ -109,8 +109,10 @@ for (x in recenttracks.results.track)
 
   y.log('Call gettoptags for '+recenttracks.results.track[x].artist.content+ ' - '+recenttracks.results.track[x].name);
 
-  var toptags = y.query('SELECT * FROM toptags WHERE api_key="'+inputs['api_key']+'" '
-            +'and track="'+recenttracks.results.track[x].name+'" and artist="'+recenttracks.results.track[x].artist.content+'"');
+  var yql = 'SELECT * FROM toptags WHERE api_key="'+inputs['api_key']+'" and track="'+recenttracks.results.track[x].name+'" and artist="'+recenttracks.results.track[x].artist.content+'"';
+  y.log(yql);
+
+  var toptags = y.query(yql);
 
 //    ws_toptags
 //    .query('artist', recenttracks.results.track[x].artist.content)
@@ -124,4 +126,4 @@ for (x in recenttracks.results.track)
   
 }
 
-//response.object = {"results": 1};
+response.object = recenttracks;
