@@ -114,10 +114,12 @@ for (x in recenttracks.results.track)
 
   var toptags = y.query(yql);
 
-  days_array[dayDate][ days_array[dayDate].length ] = toptags.results;
+  days_array[dayDate][ days_array[dayDate].length ] = y.xmlToJson(toptags.results);
 
   y.log('End call');
   
 }
 
-response.object = toptags.results;
+response.object = {"test": 
+    days_array
+};
