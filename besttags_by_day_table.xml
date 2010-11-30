@@ -24,6 +24,8 @@
 try {
 
 y.include('https://github.com/damienalexandre/lastfm-advanced-datatable/raw/master/populartagbydays.js');
+
+response.object = "test";
    
 } catch(err) {
    response.object = {'result':'failure', 'error': err};
