@@ -84,7 +84,7 @@ var recenttracks = {"results": {
 };
 
 
-var days_array = new Array;
+var days_array = new Object();
 
 //var ws_toptags = y.rest("http://ws.audioscrobbler.com/2.0/?method=track.gettoptags");
 //y.query('');
@@ -104,7 +104,7 @@ for (x in recenttracks.results.track)
 
   if (days_array[dayDate] == undefined)
   {
-    days_array[dayDate] = new Object;
+    days_array[dayDate] = new Array;
   }
 
   y.log('Call gettoptags for '+recenttracks.results.track[x].artist.content+ ' - '+recenttracks.results.track[x].name);
