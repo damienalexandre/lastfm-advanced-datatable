@@ -120,6 +120,4 @@ for (x in recenttracks.results.track)
   
 }
 
-response.object = {"test": 
-    days_array
-};
+response.object = "coucou";
