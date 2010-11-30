@@ -10,7 +10,7 @@
         </sampleQuery>
     </meta>
       <bindings>
-        <select itemPath="lfm.recenttracks.track" produces="XML" >
+        <select>
           <urls>
             <url></url>
           </urls>
