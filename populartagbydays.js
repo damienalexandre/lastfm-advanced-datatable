@@ -104,7 +104,7 @@ for (x in recenttracks.results.track)
 
   if (days_array[dayDate] == undefined)
   {
-    days_array[dayDate] = new Array;
+    days_array[dayDate] = new Object;
   }
 
   y.log('Call gettoptags for '+recenttracks.results.track[x].artist.content+ ' - '+recenttracks.results.track[x].name);
@@ -114,10 +114,13 @@ for (x in recenttracks.results.track)
 
   var toptags = y.query(yql);
 
+  y.log(toptags.results.lfm.status);
+  y.log(toptags.results.lfm.toptags.tag[0].name);
+
   days_array[dayDate][ days_array[dayDate].length ] = y.xmlToJson(toptags.results);
 
   y.log('End call');
   
 }
 
-response.object = days_array;
+response.object = days_array
