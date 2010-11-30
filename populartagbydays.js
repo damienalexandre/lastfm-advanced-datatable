@@ -90,7 +90,7 @@ var days_array = new Object();
 //y.query('');
 
 // For each song
-for (x in recenttracks.results.track)
+for (var x in recenttracks.results.track)
 {
   y.log(recenttracks.results.track[x].name);
   y.log(recenttracks.results.track[x].artist.content);
@@ -117,7 +117,7 @@ for (x in recenttracks.results.track)
   y.log(toptags.status);
   y.log(toptags.results.lfm.toptags.tag[0].name);
 
-  for (i in toptags.results.lfm.toptags.tag)
+  for (var i in toptags.results.lfm.toptags.tag)
   {
     tag = toptags.results.lfm.toptags.tag[i];
 
@@ -139,4 +139,18 @@ for (x in recenttracks.results.track)
   
 }
 
-response.object = days_array
+
+// Order the tags by popularity
+for (var d in days_array)
+{
+  var sortable = [];
+  for (var tagname in days_array[d])
+  {
+    sortable.push([tagname, days_array[d][tagname]])
+  }
+  sortable.sort(function(a, b) {return a[1] - b[1]});
+
+  days_array[d] = sortable;
+}
+
+response.object = days_array;
