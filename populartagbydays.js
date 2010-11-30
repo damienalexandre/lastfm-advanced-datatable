@@ -117,7 +117,20 @@ for (x in recenttracks.results.track)
   y.log(toptags.status);
   y.log(toptags.results.lfm.toptags.tag[0].name);
 
-  days_array[dayDate][ days_array[dayDate].length ] = y.xmlToJson(toptags.results);
+  for (i in toptags.results.lfm.toptags.tag)
+  {
+    tag = toptags.results.lfm.toptags.tag[i];
+    if (days_array[dayDate][tag.name] != undefined)
+    {
+      days_array[dayDate][tag.name] = days_array[dayDate][tag.name] + tag.count;
+    }
+    else
+    {
+      days_array[dayDate][tag.name] = tag.count;
+    }
+  }
+
+  //days_array[dayDate][ days_array[dayDate].length ] = y.xmlToJson(toptags.results);
 
   y.log('End call');
   
