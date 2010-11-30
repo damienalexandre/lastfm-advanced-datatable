@@ -79,6 +79,42 @@ var recenttracks = {"results": {
       "uts": "1290770510",
       "content": "26 Nov 2010, 11:21"
      }
+    },
+    {
+     "artist": {
+      "mbid": "10adbe5e-a2c0-4bf3-8249-2b4cbf6e6ca8",
+      "content": "Massive Attack"
+     },
+     "name": "Babel",
+     "streamable": "0",
+     "mbid": null,
+     "album": {
+      "mbid": "",
+      "content": "Heligoland"
+     },
+     "url": "http://www.last.fm/music/Massive+Attack/_/Babel",
+     "image": [
+      {
+       "size": "small",
+       "content": "http://userserve-ak.last.fm/serve/34s/54751885.png"
+      },
+      {
+       "size": "medium",
+       "content": "http://userserve-ak.last.fm/serve/64s/54751885.png"
+      },
+      {
+       "size": "large",
+       "content": "http://userserve-ak.last.fm/serve/126/54751885.png"
+      },
+      {
+       "size": "extralarge",
+       "content": "http://userserve-ak.last.fm/serve/300x300/54751885.png"
+      }
+     ],
+     "date": {
+      "uts": "1291123559",
+      "content": "30 Nov 2010, 14:26"
+     }
     }]
 }
 };
@@ -150,7 +186,11 @@ for (var d in days_array)
   }
   sortable.sort(function(a, b) {return a[1] - b[1]});
 
-  days_array[d] = sortable;
+  days_array[d] = {
+    0: {"name": sortable[0][0], "count": sortable[0][1]},
+    1: {"name": sortable[1][0], "count": sortable[0][1]},
+    2: {"name": sortable[2][0], "count": sortable[0][1]}
+  };
 }
 
 response.object = days_array;
