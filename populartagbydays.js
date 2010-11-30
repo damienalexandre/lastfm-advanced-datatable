@@ -134,7 +134,7 @@ for (var x in recenttracks.results.track)
 
   var dayDate = new Date();
   dayDate.setTime( recenttracks.results.track[x].date.uts * 1000 );
-  dayDate = dayDate.getDate() + '/' + (dayDate.getMonth()+1) + '/' + dayDate.getFullYear();
+  dayDate = dayDate.getDate() + (dayDate.getMonth()+1) + dayDate.getFullYear();
 
   y.log(dayDate);
 
@@ -184,7 +184,7 @@ for (var d in days_array)
   {
     sortable.push([tagname, days_array[d][tagname]])
   }
-  sortable.sort(function(a, b) {return a[1] - b[1]});
+  sortable.sort(function(a, b) {return b[1] - a[1]});
 
   y.log("Day "+d+", best tag : "+sortable[0][0]+" with "+ sortable[0][1]);
 
