@@ -155,7 +155,7 @@ for (var x in recenttracks.results.track)
 
   for (var i in toptags.results.lfm.toptags.tag)
   {
-    tag = toptags.results.lfm.toptags.tag[i];
+    var tag = toptags.results.lfm.toptags.tag[i];
 
     y.log(tag.name);
     
