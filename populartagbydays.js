@@ -186,10 +186,12 @@ for (var d in days_array)
   }
   sortable.sort(function(a, b) {return a[1] - b[1]});
 
+  y.log("Day "+d+", best tag : "+sortable[0][0]+" with "+ sortable[0][1]);
+
   days_array[d] = {
     0: {"name": sortable[0][0], "count": sortable[0][1]},
-    1: {"name": sortable[1][0], "count": sortable[0][1]},
-    2: {"name": sortable[2][0], "count": sortable[0][1]}
+    1: {"name": sortable[1][0], "count": sortable[1][1]},
+    2: {"name": sortable[2][0], "count": sortable[2][1]}
   };
 }
 
