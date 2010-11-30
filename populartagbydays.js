@@ -120,13 +120,16 @@ for (x in recenttracks.results.track)
   for (i in toptags.results.lfm.toptags.tag)
   {
     tag = toptags.results.lfm.toptags.tag[i];
+
+    y.log(tag.name);
+    
     if (days_array[dayDate][tag.name] != undefined)
     {
-      days_array[dayDate][tag.name] = days_array[dayDate][tag.name] + tag.count;
+      days_array[dayDate][tag.name] = (parseInt(days_array[dayDate][tag.name],10) + parseInt(tag.count, 10));
     }
     else
     {
-      days_array[dayDate][tag.name] = tag.count;
+      days_array[dayDate][tag.name] = parseInt(tag.count,10);
     }
   }
 
