@@ -109,7 +109,7 @@ for (x in recenttracks.results.track)
 
   y.log('Call gettoptags for '+recenttracks.results.track[x].artist.content+ ' - '+recenttracks.results.track[x].name);
 
-  var yql = 'USE "http://www.datatables.org/lastfm/lastfm.track.gettoptags.xml" AS toptags;SELECT * FROM toptags WHERE api_key="'+inputs['api_key']+'" and track="'+recenttracks.results.track[x].name+'" and artist="'+recenttracks.results.track[x].artist.content+'"';
+  var yql = 'SELECT * FROM lastfm.track.gettoptags WHERE api_key="'+inputs['api_key']+'" and track="'+recenttracks.results.track[x].name+'" and artist="'+recenttracks.results.track[x].artist.content+'"';
   y.log(yql);
 
   var toptags = y.query(yql);
@@ -120,4 +120,4 @@ for (x in recenttracks.results.track)
   
 }
 
-response.object = recenttracks;
+response.object = y.jsonToXml(days_array);
