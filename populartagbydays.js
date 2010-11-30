@@ -137,7 +137,7 @@ for (var trackindex in recenttracks.results.track)
   var trackDate = new Date();
   trackDate.setTime( recenttracks.results.track[trackindex].date.uts * 1000 );
 
-  var dayDate = new Date(""+trackDate.getFullYear()+"/"+rackDate.getMonth()+"/"+trackDate.getDate());
+  var dayDate = new Date(""+trackDate.getFullYear()+"/"+trackDate.getMonth()+"/"+trackDate.getDate());
   dayDate = (dayDate.getTime()/1000);
 
   y.log(dayDate);
