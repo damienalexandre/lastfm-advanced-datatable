@@ -6,117 +6,118 @@
 //.query('limit', inputs['limit']).accept('application/json').get().response;
 
 
-var recenttracks = {"results": {
-   "track": [
+var recenttracks = {
+  "results": {
+    "track": [
     {
-     "artist": {
-      "mbid": "7b885d42-3c41-4f43-9944-a5855ec5155e",
-      "content": "Goldfrapp"
-     },
-     "name": "Deer Stop",
-     "streamable": "0",
-     "mbid": null,
-     "album": {
-      "mbid": "3e3318f4-4f65-441d-b4d6-b8cbd2d97368",
-      "content": "Felt Mountain"
-     },
-     "url": "http://www.last.fm/music/Goldfrapp/_/Deer+Stop",
-     "image": [
+      "artist": {
+        "mbid": "7b885d42-3c41-4f43-9944-a5855ec5155e",
+        "content": "Goldfrapp"
+      },
+      "name": "Deer Stop",
+      "streamable": "0",
+      "mbid": null,
+      "album": {
+        "mbid": "3e3318f4-4f65-441d-b4d6-b8cbd2d97368",
+        "content": "Felt Mountain"
+      },
+      "url": "http://www.last.fm/music/Goldfrapp/_/Deer+Stop",
+      "image": [
       {
-       "size": "small",
-       "content": "http://userserve-ak.last.fm/serve/34s/54957407.png"
+        "size": "small",
+        "content": "http://userserve-ak.last.fm/serve/34s/54957407.png"
       },
       {
-       "size": "medium",
-       "content": "http://userserve-ak.last.fm/serve/64s/54957407.png"
+        "size": "medium",
+        "content": "http://userserve-ak.last.fm/serve/64s/54957407.png"
       },
       {
-       "size": "large",
-       "content": "http://userserve-ak.last.fm/serve/126/54957407.png"
+        "size": "large",
+        "content": "http://userserve-ak.last.fm/serve/126/54957407.png"
       },
       {
-       "size": "extralarge",
-       "content": "http://userserve-ak.last.fm/serve/300x300/54957407.png"
+        "size": "extralarge",
+        "content": "http://userserve-ak.last.fm/serve/300x300/54957407.png"
       }
-     ],
-     "date": {
-      "uts": "1290770830",
-      "content": "26 Nov 2010, 11:27"
-     }
+      ],
+      "date": {
+        "uts": "1290770830",
+        "content": "26 Nov 2010, 11:27"
+      }
     },
     {
-     "artist": {
-      "mbid": "10adbe5e-a2c0-4bf3-8249-2b4cbf6e6ca8",
-      "content": "Massive Attack"
-     },
-     "name": "Babel",
-     "streamable": "0",
-     "mbid": null,
-     "album": {
-      "mbid": "",
-      "content": "Heligoland"
-     },
-     "url": "http://www.last.fm/music/Massive+Attack/_/Babel",
-     "image": [
+      "artist": {
+        "mbid": "10adbe5e-a2c0-4bf3-8249-2b4cbf6e6ca8",
+        "content": "Massive Attack"
+      },
+      "name": "Babel",
+      "streamable": "0",
+      "mbid": null,
+      "album": {
+        "mbid": "",
+        "content": "Heligoland"
+      },
+      "url": "http://www.last.fm/music/Massive+Attack/_/Babel",
+      "image": [
       {
-       "size": "small",
-       "content": "http://userserve-ak.last.fm/serve/34s/54751885.png"
+        "size": "small",
+        "content": "http://userserve-ak.last.fm/serve/34s/54751885.png"
       },
       {
-       "size": "medium",
-       "content": "http://userserve-ak.last.fm/serve/64s/54751885.png"
+        "size": "medium",
+        "content": "http://userserve-ak.last.fm/serve/64s/54751885.png"
       },
       {
-       "size": "large",
-       "content": "http://userserve-ak.last.fm/serve/126/54751885.png"
+        "size": "large",
+        "content": "http://userserve-ak.last.fm/serve/126/54751885.png"
       },
       {
-       "size": "extralarge",
-       "content": "http://userserve-ak.last.fm/serve/300x300/54751885.png"
+        "size": "extralarge",
+        "content": "http://userserve-ak.last.fm/serve/300x300/54751885.png"
       }
-     ],
-     "date": {
-      "uts": "1290770510",
-      "content": "26 Nov 2010, 11:21"
-     }
+      ],
+      "date": {
+        "uts": "1290770510",
+        "content": "26 Nov 2010, 11:21"
+      }
     },
     {
-     "artist": {
-      "mbid": "10adbe5e-a2c0-4bf3-8249-2b4cbf6e6ca8",
-      "content": "Massive Attack"
-     },
-     "name": "Babel",
-     "streamable": "0",
-     "mbid": null,
-     "album": {
-      "mbid": "",
-      "content": "Heligoland"
-     },
-     "url": "http://www.last.fm/music/Massive+Attack/_/Babel",
-     "image": [
+      "artist": {
+        "mbid": "10adbe5e-a2c0-4bf3-8249-2b4cbf6e6ca8",
+        "content": "Massive Attack"
+      },
+      "name": "Babel",
+      "streamable": "0",
+      "mbid": null,
+      "album": {
+        "mbid": "",
+        "content": "Heligoland"
+      },
+      "url": "http://www.last.fm/music/Massive+Attack/_/Babel",
+      "image": [
       {
-       "size": "small",
-       "content": "http://userserve-ak.last.fm/serve/34s/54751885.png"
+        "size": "small",
+        "content": "http://userserve-ak.last.fm/serve/34s/54751885.png"
       },
       {
-       "size": "medium",
-       "content": "http://userserve-ak.last.fm/serve/64s/54751885.png"
+        "size": "medium",
+        "content": "http://userserve-ak.last.fm/serve/64s/54751885.png"
       },
       {
-       "size": "large",
-       "content": "http://userserve-ak.last.fm/serve/126/54751885.png"
+        "size": "large",
+        "content": "http://userserve-ak.last.fm/serve/126/54751885.png"
       },
       {
-       "size": "extralarge",
-       "content": "http://userserve-ak.last.fm/serve/300x300/54751885.png"
+        "size": "extralarge",
+        "content": "http://userserve-ak.last.fm/serve/300x300/54751885.png"
       }
-     ],
-     "date": {
-      "uts": "1291123559",
-      "content": "30 Nov 2010, 14:26"
-     }
+      ],
+      "date": {
+        "uts": "1291123559",
+        "content": "30 Nov 2010, 14:26"
+      }
     }]
-}
+  }
 };
 
 
@@ -126,14 +127,14 @@ var days_array = new Object();
 //y.query('');
 
 // For each song
-for (var x in recenttracks.results.track)
+for (var trackindex in recenttracks.results.track)
 {
-  y.log(recenttracks.results.track[x].name);
-  y.log(recenttracks.results.track[x].artist.content);
-  y.log(recenttracks.results.track[x].date.uts);
+  y.log(recenttracks.results.track[trackindex].name);
+  y.log(recenttracks.results.track[trackindex].artist.content);
+  y.log(recenttracks.results.track[trackindex].date.uts);
 
   var dayDate = new Date();
-  dayDate.setTime( recenttracks.results.track[x].date.uts * 1000 );
+  dayDate.setTime( recenttracks.results.track[trackindex].date.uts * 1000 );
   dayDate = dayDate.getDate() + (dayDate.getMonth()+1) + dayDate.getFullYear();
 
   y.log(dayDate);
@@ -143,9 +144,9 @@ for (var x in recenttracks.results.track)
     days_array[dayDate] = new Object();
   }
 
-  y.log('Call gettoptags for '+recenttracks.results.track[x].artist.content+ ' - '+recenttracks.results.track[x].name);
+  y.log('Call gettoptags for '+recenttracks.results.track[trackindex].artist.content+ ' - '+recenttracks.results.track[trackindex].name);
 
-  var yql = 'SELECT * FROM lastfm.track.gettoptags WHERE api_key="'+inputs['api_key']+'" and track="'+recenttracks.results.track[x].name+'" and artist="'+recenttracks.results.track[x].artist.content+'"';
+  var yql = 'SELECT * FROM lastfm.track.gettoptags WHERE api_key="'+inputs['api_key']+'" and track="'+recenttracks.results.track[trackindex].name+'" and artist="'+recenttracks.results.track[trackindex].artist.content+'"';
   y.log(yql);
 
   var toptags = y.query(yql);
@@ -153,9 +154,9 @@ for (var x in recenttracks.results.track)
   y.log(toptags.status);
   y.log(toptags.results.lfm.toptags.tag[0].name);
 
-  for (var i in toptags.results.lfm.toptags.tag)
+  for (var tagindex in toptags.results.lfm.toptags.tag)
   {
-    var tag = toptags.results.lfm.toptags.tag[i];
+    var tag = toptags.results.lfm.toptags.tag[tagindex];
 
     y.log(tag.name);
     
@@ -177,21 +178,32 @@ for (var x in recenttracks.results.track)
 
 
 // Order the tags by popularity
-for (var d in days_array)
+for (var day in days_array)
 {
   var sortable = [];
-  for (var tagname in days_array[d])
+  for (var tagname in days_array[day])
   {
-    sortable.push([tagname, days_array[d][tagname]])
+    sortable.push([tagname, days_array[day][tagname]])
   }
-  sortable.sort(function(a, b) {return b[1] - a[1]});
+  sortable.sort(function(a, b) {
+    return b[1] - a[1]
+    });
 
-  y.log("Day "+d+", best tag : "+sortable[0][0]+" with "+ sortable[0][1]);
+  y.log("Day "+day+", best tag : "+sortable[0][0]+" with "+ sortable[0][1]);
 
-  days_array[d] = {
-    0: {"name": sortable[0][0], "count": sortable[0][1]},
-    1: {"name": sortable[1][0], "count": sortable[1][1]},
-    2: {"name": sortable[2][0], "count": sortable[2][1]}
+  days_array[day] = {
+    0: {
+      "name": sortable[0][0],
+      "count": sortable[0][1]
+      },
+    1: {
+      "name": sortable[1][0],
+      "count": sortable[1][1]
+      },
+    2: {
+      "name": sortable[2][0],
+      "count": sortable[2][1]
+      }
   };
 }
 
