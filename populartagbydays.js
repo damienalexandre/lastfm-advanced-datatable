@@ -195,15 +195,15 @@ for (var day in days_array)
   y.log("Day "+day+", best tag : "+sortable[0][0]+" with "+ sortable[0][1]);
 
   days_array[day] = {
-    0: {
+    'first': {
       "name": sortable[0][0],
       "count": sortable[0][1]
       },
-    1: {
+    'second': {
       "name": sortable[1][0],
       "count": sortable[1][1]
       },
-    2: {
+    'thrid': {
       "name": sortable[2][0],
       "count": sortable[2][1]
       }
