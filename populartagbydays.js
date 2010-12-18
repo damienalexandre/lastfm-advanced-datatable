@@ -210,4 +210,4 @@ for (var day in days_array)
   };
 }
 
-response.object = days_array;
+response.object = days_array[day];
