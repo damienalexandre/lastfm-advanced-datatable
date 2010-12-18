@@ -210,4 +210,4 @@ for (var day in days_array)
   };
 }
 
-response.object = days_array[day];
+response.object = days_array['1288076400'];
