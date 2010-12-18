@@ -210,4 +210,4 @@ for (var day in days_array)
   };
 }
 
-response.object = days_array['1288076400'];
+response.object = y.jsonToXml(days_array['1288076400']);
