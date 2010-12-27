@@ -21,7 +21,7 @@ var days_list = new Object();
  */
 function getTopTags(name, artist)
 {
-  var yql = 'SELECT * FROM lastfm.track.gettoptags WHERE track="'+name+'" and artist="'+artist+'"';
+  var yql = 'SELECT * FROM lastfm.track.gettoptags WHERE api_key="'+inputs['api_key']+'" and track="'+name+'" and artist="'+artist+'"';
   return y.query(yql);
 }
 
