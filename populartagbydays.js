@@ -137,10 +137,9 @@ for (var trackindex in recenttracks.results.track)
   var trackDate = new Date();
   trackDate.setTime( recenttracks.results.track[trackindex].date.uts * 1000 );
 
-  //var dayDate = new Date(""+trackDate.getFullYear()+"/"+trackDate.getMonth()+"/"+trackDate.getDate());
-  //dayDate = (dayDate.getTime()/1000);
+  var dayDate = new Date(""+trackDate.getFullYear()+"/"+trackDate.getMonth()+"/"+trackDate.getDate());
+  dayDate = (dayDate.getTime()/1000);
 
-  dayDate = trackDate.getFullYear()+"/"+trackDate.getMonth()+"/"+trackDate.getDate();
   y.log(dayDate);
 
   if (days_array[dayDate] == undefined)
@@ -156,7 +155,7 @@ for (var trackindex in recenttracks.results.track)
   var toptags = y.query(yql);
 
   y.log(toptags.status);
-  y.log(toptags.results.lfm.toptags.tag[0].name);
+  y.log(toptags.results.lfm.toptags.tag[0].name + ' ' + toptags.results.lfm.toptags.tag[0].count);
 
   for (var tagindex in toptags.results.lfm.toptags.tag)
   {
@@ -174,10 +173,7 @@ for (var trackindex in recenttracks.results.track)
     }
   }
 
-  //days_array[dayDate][ days_array[dayDate].length ] = y.xmlToJson(toptags.results);
-
   y.log('End call');
-  
 }
 
 
@@ -211,4 +207,12 @@ for (var day in days_array)
 //  };
 }
 
-response.object = y.jsonToXml(days_array);
+// Try formating
+var returnXml = <root><days></days></root>;
+for (var day in days_array)
+{
+  returnXml.days += '<day date="'+day+'">'+y.jsonToXml(days_array[day])+'</day>';
+}
+
+response.object = returnXml;
+//response.object = y.jsonToXml(days_array);
