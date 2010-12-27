@@ -6,8 +6,8 @@
 //.query('limit', inputs['limit']).accept('application/json').get().response;
 
 var recenttracks = y.query("SELECT * FROM lastfm.recenttracks WHERE user='"+inputs['user']+"' AND api_key='"+inputs['api_key']+"'").results;
-recenttracks = y.xmlToJson(recenttracks);
-recenttracks = recenttracks.results.lfm;
+//recenttracks = y.xmlToJson(recenttracks);
+response.object = recenttracks.results.lfm;
 
 //var recenttracks = {
 //  "results": {
