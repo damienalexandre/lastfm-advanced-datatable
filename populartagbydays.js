@@ -159,7 +159,7 @@ for (var trackindex in recenttracks)
   {
     var tag = toptags.results.lfm.toptags.tag[tagindex];
 
-    y.log(tag);
+    y.log(tag.name);
 
     if (days_array[dayDate][tag.name] != undefined)
     {
