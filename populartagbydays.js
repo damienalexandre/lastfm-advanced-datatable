@@ -9,7 +9,7 @@ var recenttracks = y.query("SELECT * FROM lastfm.recenttracks WHERE user='"+inpu
 recenttracks = y.xmlToJson(recenttracks);
 
 response.object = recenttracks;
-return;
+return true;
 
 //var recenttracks = {
 //  "results": {
