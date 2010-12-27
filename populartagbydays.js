@@ -7,7 +7,7 @@ var recenttracks = request_instance
 
 
 
-response.object = recenttracks.lfm;
+response.object = y.xmlToJson(recenttracks.result);
 
 //var recenttracks = {
 //  "results": {
