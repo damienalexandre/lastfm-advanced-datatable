@@ -208,10 +208,10 @@ for (var day in days_array)
 }
 
 // Try formating
-var returnXml = <root><days></days></root>;
+var returnXml = <root></root>;
 for (var day in days_array)
 {
-  returnXml.days += <day date={day}>{y.jsonToXml(days_array[day])}</day>;
+  returnXml += <result date={day}>{y.jsonToXml(days_array[day])}</result>;
 }
 
 response.object = returnXml;
