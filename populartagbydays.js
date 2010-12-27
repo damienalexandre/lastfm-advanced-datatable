@@ -13,6 +13,7 @@
 // Set some vars, check if limit is provided
 inputs['limit'] = inputs['limit'] || 15;
 var request_recenttracks = y.rest("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks");
+y.env('store://tT9De0xTrCLjq9mXzlbTd3'); // TopTag security store
 var recenttracks;
 var days_list = new Object();
 
