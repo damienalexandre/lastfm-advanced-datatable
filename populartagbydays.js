@@ -142,9 +142,9 @@ for (var trackindex in recenttracks.results.track)
 
   y.log(dayDate);
 
-  if (days_array[dayDate] == undefined)
+  if (days_array[dayDate.toLocaleString()] == undefined)
   {
-    days_array[dayDate] = new Object();
+    days_array[dayDate.toLocaleString()] = new Object();
   }
 
   y.log('Call gettoptags for '+recenttracks.results.track[trackindex].artist.content+ ' - '+recenttracks.results.track[trackindex].name);
@@ -194,20 +194,20 @@ for (var day in days_array)
 
   y.log("Day "+day+", best tag : "+sortable[0][0]+" with "+ sortable[0][1]);
 
-  days_array[day] = {
-    'first': {
-      "name": sortable[0][0],
-      "count": sortable[0][1]
-      },
-    'second': {
-      "name": sortable[1][0],
-      "count": sortable[1][1]
-      },
-    'thrid': {
-      "name": sortable[2][0],
-      "count": sortable[2][1]
-      }
-  };
+//  days_array[day] = {
+//    'first': {
+//      "name": sortable[0][0],
+//      "count": sortable[0][1]
+//      },
+//    'second': {
+//      "name": sortable[1][0],
+//      "count": sortable[1][1]
+//      },
+//    'thrid': {
+//      "name": sortable[2][0],
+//      "count": sortable[2][1]
+//      }
+//  };
 }
 
-response.object = y.jsonToXml(days_array['1288076400']);
+response.object = y.jsonToXml(days_array);
