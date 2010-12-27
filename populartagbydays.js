@@ -11,7 +11,7 @@
  */
 
 // Set some vars, check if limit is provided
-//inputs['limit'] = inputs['limit'] || 15;
+inputs['limit'] = inputs['limit'] || 15;
 var request_recenttracks = y.rest("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks");
 var recenttracks;
 var days_list = new Object();
@@ -34,7 +34,7 @@ recenttracks = y.xmlToJson(recenttracks).lfm.recenttracks.track;
 // For each song
 for (var trackindex in recenttracks)
 {
-  y.log('At '+recenttracks[trackindex].date.uts+', user have listen '+centtracks[trackindex].name+' by '+recenttracks[trackindex].artist.content);
+  y.log('At '+recenttracks[trackindex].date.uts+', user have listen '+recenttracks[trackindex].name+' by '+recenttracks[trackindex].artist.content);
 
   // Get a clean timestamp (only the DAY at midnight, without hours / minutes / seconds)
   var trackDate = new Date();
