@@ -7,7 +7,7 @@
 
 var recenttracks = y.query("SELECT * FROM lastfm.recenttracks WHERE user='"+inputs['user']+"' AND api_key='"+inputs['api_key']+"'").results;
 recenttracks = y.xmlToJson(recenttracks);
-response.object = recenttracks.lfm;
+response.object = recenttracks.results;
 
 //var recenttracks = {
 //  "results": {
