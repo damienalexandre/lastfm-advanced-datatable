@@ -137,14 +137,15 @@ for (var trackindex in recenttracks.results.track)
   var trackDate = new Date();
   trackDate.setTime( recenttracks.results.track[trackindex].date.uts * 1000 );
 
-  var dayDate = new Date(""+trackDate.getFullYear()+"/"+trackDate.getMonth()+"/"+trackDate.getDate());
-  dayDate = (dayDate.getTime()/1000);
+  //var dayDate = new Date(""+trackDate.getFullYear()+"/"+trackDate.getMonth()+"/"+trackDate.getDate());
+  //dayDate = (dayDate.getTime()/1000);
 
+  dayDate = trackDate.getFullYear()+"/"+trackDate.getMonth()+"/"+trackDate.getDate();
   y.log(dayDate);
 
-  if (days_array[dayDate.toLocaleString()] == undefined)
+  if (days_array[dayDate] == undefined)
   {
-    days_array[dayDate.toLocaleString()] = new Object();
+    days_array[dayDate] = new Object();
   }
 
   y.log('Call gettoptags for '+recenttracks.results.track[trackindex].artist.content+ ' - '+recenttracks.results.track[trackindex].name);
