@@ -9,7 +9,7 @@ var recenttracks = y.query("SELECT * FROM lastfm.recenttracks WHERE user='"+inpu
 recenttracks = y.xmlToJson(recenttracks);
 
 response.object = recenttracks;
-return true;
+
 
 //var recenttracks = {
 //  "results": {
@@ -206,5 +206,5 @@ for (var day in days_array)
   returnXml.appendChild( content );
 }
 
-response.object = returnXml;
+//response.object = returnXml;
 //response.object = y.jsonToXml(days_array);
