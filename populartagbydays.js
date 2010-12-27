@@ -213,9 +213,8 @@ for (var day in days_array)
 {
   var content = y.jsonToXml(days_array[day]);
   
-  returnXml.appendChild( <day date={day}>{content.result}</day> );
-
-  //    += '<day date="'+day+'">'+y.jsonToXml(days_array[day])+'</day>';
+  returnXml.appendChild( <day date={day}>{content}</day> );
+  
 }
 
 response.object = returnXml;
