@@ -155,13 +155,10 @@ for (var trackindex in recenttracks.results.track)
   var toptags = y.query(yql);
 
   y.log(toptags.status);
-  y.log(toptags.results.lfm.toptags.tag[0].name + ' ' + toptags.results.lfm.toptags.tag[0].count);
 
   for (var tagindex in toptags.results.lfm.toptags.tag)
   {
     var tag = toptags.results.lfm.toptags.tag[tagindex];
-
-    y.log(tag.name);
     
     if (days_array[dayDate][tag.name] != undefined)
     {
@@ -178,7 +175,7 @@ for (var trackindex in recenttracks.results.track)
 
 
 // Order the tags by popularity and format XML
-var returnXml = <></>;
+var returnXml = <root></root>;
 
 for (var day in days_array)
 {
