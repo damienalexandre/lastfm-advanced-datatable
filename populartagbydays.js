@@ -178,7 +178,7 @@ for (var trackindex in recenttracks.results.track)
 
 
 // Order the tags by popularity and format XML
-var returnXml = new XmlList();
+var returnXml = <></>;
 
 for (var day in days_array)
 {
