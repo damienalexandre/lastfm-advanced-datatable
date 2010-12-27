@@ -211,7 +211,13 @@ for (var day in days_array)
 var returnXml = <days></days>;
 for (var day in days_array)
 {
-  var content = y.jsonToXml(days_array[day]);
+  var content = <tags></tags>;
+
+  for (var tag in days_array[day])
+  {
+    content.appendChild( <tag count={days_array[day][tag]}>{tag}</tag> );
+  }
+
   content.@day = day;
   
   returnXml.appendChild( content );
