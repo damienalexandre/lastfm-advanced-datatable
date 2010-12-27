@@ -159,7 +159,7 @@ for (var trackindex in recenttracks)
   {
     var tag = toptags.results.lfm.toptags.tag[tagindex];
 
-    y.log(tag.name);
+    //y.log(tag.name);
 
     if (days_array[dayDate][tag.name] != undefined)
     {
@@ -180,6 +180,7 @@ var returnXml = <days></days>;
 
 for (var day in days_array)
 {
+  y.log(day);
   var content = <day></day>;
   var sortable = [];
 
