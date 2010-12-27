@@ -5,9 +5,9 @@ var recenttracks = request_instance
 .query('user', inputs['user']).query('api_key', inputs['api_key'])
 .query('limit', inputs['limit']).accept('application/json').get().response;
 
+y.log(recenttracks);
 
-
-response.object = recenttracks.results;
+response.object = recenttracks;
 
 //var recenttracks = {
 //  "results": {
