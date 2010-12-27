@@ -177,51 +177,31 @@ for (var trackindex in recenttracks.results.track)
 }
 
 
-// Order the tags by popularity
+// Order the tags by popularity and format XML
+var returnXml = <days></days>;
+
 for (var day in days_array)
 {
+  var content = <tags></tags>;
   var sortable = [];
+  
   for (var tagname in days_array[day])
   {
     sortable.push([tagname, days_array[day][tagname]])
   }
   sortable.sort(function(a, b) {
     return b[1] - a[1]
-    });
+  });
 
   y.log("Day "+day+", best tag : "+sortable[0][0]+" with "+ sortable[0][1]);
 
-//  days_array[day] = {
-//    'first': {
-//      "name": sortable[0][0],
-//      "count": sortable[0][1]
-//      },
-//    'second': {
-//      "name": sortable[1][0],
-//      "count": sortable[1][1]
-//      },
-//    'thrid': {
-//      "name": sortable[2][0],
-//      "count": sortable[2][1]
-//      }
-//  };
-}
-
-// Try
-var returnXml = <days></days>;
-for (var day in days_array)
-{
-  var content = <tags></tags>;
-
-  for (var tag in days_array[day])
+  for (var index in sortable)
   {
-    content.appendChild( <tag count={days_array[day][tag]}>{tag}</tag> );
+    content.appendChild( <tag count={sortable[index][1]}>{sortable[index][0]}</tag> );
   }
 
   content.@day = day;
-  
   returnXml.appendChild( content );
-  
 }
 
 response.object = returnXml;
