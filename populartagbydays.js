@@ -5,7 +5,7 @@
 //.query('user', inputs['user']).query('api_key', inputs['api_key'])
 //.query('limit', inputs['limit']).accept('application/json').get().response;
 
-var recenttracks = y.query("SELECT * FROM lastfm.recenttracks WHERE user='"+inputs['user']+"' AND api_key='"+inputs['api_key']+"'");
+var recenttracks = y.query("SELECT * FROM lastfm.recenttracks WHERE user='"+inputs['user']+"' AND api_key='"+inputs['api_key']+"'").lfm;
 
 //var recenttracks = {
 //  "results": {
