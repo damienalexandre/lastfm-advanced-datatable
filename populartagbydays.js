@@ -38,7 +38,7 @@ for (var trackindex in recenttracks)
   // There is no date (currently playing tune)
   if (recenttracks[trackindex].date == undefined)
   {
-    recenttracks[trackindex].date.uts = Math.round(new Date().getTime() / 1000);
+    continue;
   }
 
   y.log('At '+recenttracks[trackindex].date.uts+', user have listen '+recenttracks[trackindex].name+' by '+recenttracks[trackindex].artist.content);
