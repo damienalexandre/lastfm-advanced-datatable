@@ -180,7 +180,6 @@ var returnXml = <days></days>;
 
 for (var day in days_array)
 {
-  y.log(day);
   var content = <day></day>;
   var sortable = [];
 
@@ -203,5 +202,5 @@ for (var day in days_array)
   returnXml.appendChild( content );
 }
 
-//response.object = returnXml;
+response.object = returnXml;
 //response.object = y.jsonToXml(days_array);
