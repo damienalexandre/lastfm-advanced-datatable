@@ -211,7 +211,7 @@ for (var day in days_array)
 var returnXml = <days></days>;
 for (var day in days_array)
 {
-  returnXml += <result date={day}>{y.jsonToXml(days_array[day])}</result>;
+  returnXml += <day date={day}>{y.jsonToXml(days_array[day])}</day>;
 }
 
 response.object = returnXml;
