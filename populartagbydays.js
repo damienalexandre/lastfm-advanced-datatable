@@ -208,10 +208,10 @@ for (var day in days_array)
 }
 
 // Try
-var returnXml = <root><days></days></root>;
+var returnXml = <days></days>;
 for (var day in days_array)
 {
-  returnXml.days.appendChild( <day date={day}>coucou</day> );
+  returnXml.appendChild( <day date={day}>{y.jsonToXml(days_array[day])}</day> );
 
   //    += '<day date="'+day+'">'+y.jsonToXml(days_array[day])+'</day>';
 }
