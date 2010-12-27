@@ -35,6 +35,12 @@ recenttracks = y.xmlToJson(recenttracks).lfm.recenttracks.track;
 // For each song
 for (var trackindex in recenttracks)
 {
+  // There is no date (currently playing tune)
+  if (recenttracks[trackindex].date == undefined)
+  {
+    recenttracks[trackindex].date.uts = Math.round(new Date().getTime() / 1000);
+  }
+
   y.log('At '+recenttracks[trackindex].date.uts+', user have listen '+recenttracks[trackindex].name+' by '+recenttracks[trackindex].artist.content);
 
   // Get a clean timestamp (only the DAY at midnight, without hours / minutes / seconds)
