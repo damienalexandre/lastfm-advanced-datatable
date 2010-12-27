@@ -1,9 +1,11 @@
-//
-   var request_instance = y.rest("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks");
-//
-var recenttracks = request_instance
-.query('user', inputs['user']).query('api_key', inputs['api_key'])
-.query('limit', inputs['limit']).accept('application/json').get().response;
+////
+//   var request_instance = y.rest("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks");
+////
+//var recenttracks = request_instance
+//.query('user', inputs['user']).query('api_key', inputs['api_key'])
+//.query('limit', inputs['limit']).accept('application/json').get().response;
+
+var recenttracks = y.query("SELECT * FROM lastfm.recenttracks WHERE user='"+inputs['user']+"' AND api_key='"+inputs['api_key']+"'");
 
 //var recenttracks = {
 //  "results": {
