@@ -152,15 +152,14 @@ for (var trackindex in recenttracks)
   y.log('Call gettoptags for '+recenttracks[trackindex].artist.content+ ' - '+recenttracks[trackindex].name);
 
   var yql = 'SELECT * FROM lastfm.track.gettoptags WHERE api_key="'+inputs['api_key']+'" and track="'+recenttracks[trackindex].name+'" and artist="'+recenttracks[trackindex].artist.content+'"';
-  y.log(yql);
 
   var toptags = y.query(yql);
-
-  y.log(toptags.status);
 
   for (var tagindex in toptags.results.lfm.toptags.tag)
   {
     var tag = toptags.results.lfm.toptags.tag[tagindex];
+
+    y.log(tag);
 
     if (days_array[dayDate][tag.name] != undefined)
     {
