@@ -136,10 +136,8 @@ for (var trackindex in recenttracks)
   y.log(recenttracks[trackindex].artist.content);
   y.log(recenttracks[trackindex].date.uts);
 
-continue;
-
   var trackDate = new Date();
-  trackDate.setTime( recenttracks.results.track[trackindex].date.uts * 1000 );
+  trackDate.setTime( recenttracks[trackindex].date.uts * 1000 );
 
   var dayDate = new Date(""+trackDate.getFullYear()+"/"+trackDate.getMonth()+"/"+trackDate.getDate());
   dayDate = (dayDate.getTime()/1000);
@@ -151,9 +149,9 @@ continue;
     days_array[dayDate] = new Object();
   }
 
-  y.log('Call gettoptags for '+recenttracks.results.track[trackindex].artist.content+ ' - '+recenttracks.results.track[trackindex].name);
+  y.log('Call gettoptags for '+recenttracks[trackindex].artist.content+ ' - '+recenttracks[trackindex].name);
 
-  var yql = 'SELECT * FROM lastfm.track.gettoptags WHERE api_key="'+inputs['api_key']+'" and track="'+recenttracks.results.track[trackindex].name+'" and artist="'+recenttracks.results.track[trackindex].artist.content+'"';
+  var yql = 'SELECT * FROM lastfm.track.gettoptags WHERE api_key="'+inputs['api_key']+'" and track="'+recenttracks[trackindex].name+'" and artist="'+recenttracks[trackindex].artist.content+'"';
   y.log(yql);
 
   var toptags = y.query(yql);
