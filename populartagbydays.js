@@ -7,7 +7,7 @@ var recenttracks = request_instance
 
 
 
-response.object = recenttracks;
+response.object = recenttracks.lfm;
 
 //var recenttracks = {
 //  "results": {
