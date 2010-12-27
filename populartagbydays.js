@@ -207,11 +207,11 @@ for (var day in days_array)
 //  };
 }
 
-// Try formating
-var returnXml = <days></days>;
+// Try
+var returnXml = <root><days></days></root>;
 for (var day in days_array)
 {
-  returnXml += <day date={day}>{y.jsonToXml(days_array[day])}</day>;
+  returnXml.days += '<day date="'+day+'">'+y.jsonToXml(days_array[day])+'</day>'.toXMLString();
 }
 
 response.object = returnXml;
