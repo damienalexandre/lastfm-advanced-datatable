@@ -16,14 +16,7 @@ var request_recenttracks = y.rest("http://ws.audioscrobbler.com/2.0/?method=user
 var recenttracks;
 var days_list = new Object();
 
-/**
- * Fetch the Top Tag of a song
- */
-function getTopTags(name, artist)
-{
-  var yql = 'SELECT * FROM lastfm.track.gettoptags WHERE api_key="'+inputs['api_key']+'" and track="'+name+'" and artist="'+artist+'"';
-  return y.query(yql);
-}
+
 
 // Call the last songs \o/
 recenttracks = request_recenttracks
@@ -47,7 +40,8 @@ for (var trackindex in recenttracks)
     days_list[dayDate] = new Object();
   }
 
-  toptags = getTopTags(recenttracks[trackindex].name, recenttracks[trackindex].artist.content);
+  var yql = 'SELECT * FROM lastfm.track.gettoptags WHERE api_key="'+inputs['api_key']+'" and track="'+recenttracks[trackindex].name+'" and artist="'+recenttracks[trackindex].artist.content+'"';
+  toptags = y.query(yql);
 
   for (var tagindex in toptags.results.lfm.toptags.tag)
   {
