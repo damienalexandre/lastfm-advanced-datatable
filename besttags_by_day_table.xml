@@ -26,7 +26,6 @@
                  * @author dalexandre
                  * @since  2010/12/27
                  */
-
                 inputs['limit'] = inputs['limit'] || 15;
                 var request_recenttracks = y.rest("http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks");
                 y.env('store://tT9De0xTrCLjq9mXzlbTd3'); // TopTag security store
@@ -87,7 +86,6 @@
                         }
                     }
                 }
-
 
                 // Order the tags by popularity and format in XML
                 var returnXml = <days></days>;
